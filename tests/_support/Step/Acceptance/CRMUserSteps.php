@@ -49,4 +49,14 @@ class CRMUserSteps extends \AcceptanceTester
 
         $I->dontSee($customerData['CustomerRecord[name]'], '#search_results');
     }
+
+
+    function seeLargeBodyOfText()
+    {
+        $I->this;
+
+        $text = $I->grabTextFrom('p');
+
+        $I->seeContentIsLong($text);
+    }
 }

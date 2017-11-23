@@ -84,6 +84,8 @@ class CustomersController extends Controller {
         $customer = new CustomerRecord;
         $phone = new PhoneRecord;
 
+        dump(app()->layout);die;
+
         if (request()->post('CustomerRecord')) {
 
             if ($this->load($customer, $phone, $_POST))

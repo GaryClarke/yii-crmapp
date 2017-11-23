@@ -64,6 +64,12 @@ class SiteController extends Controller
         return 'Our CRM';
     }
 
+
+    public function actionDocs()
+    {
+        return $this->render('docindex.md');
+    }
+
     /**
      * Login action.
      *

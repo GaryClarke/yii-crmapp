@@ -2,12 +2,14 @@
 
 namespace app\controllers;
 
+use app\models\service\ServiceRecord;
 use yii\web\Controller;
 use app\models\customer\Phone;
 use yii\data\ArrayDataProvider;
 use app\models\customer\Customer;
 use app\models\customer\PhoneRecord;
 use app\models\customer\CustomerRecord;
+use yii\web\Response;
 
 class CustomersController extends Controller {
 
@@ -84,7 +86,7 @@ class CustomersController extends Controller {
         $customer = new CustomerRecord;
         $phone = new PhoneRecord;
 
-        dump(app()->layout);die;
+//        dump(app()->layout);die;
 
         if (request()->post('CustomerRecord')) {
 
@@ -98,6 +100,7 @@ class CustomersController extends Controller {
 
         return $this->render('add', compact('customer', 'phone'));
     }
+
 
 
     /**

@@ -9,6 +9,15 @@ if (!function_exists('request'))
 }
 
 
+if (!function_exists('response'))
+{
+    function response()
+    {
+        return Yii::$app->response;
+    }
+}
+
+
 if (!function_exists('app'))
 {
     function app()

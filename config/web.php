@@ -4,6 +4,8 @@
 
 // Another random comment
 
+use yii\base\Theme;
+
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
@@ -20,11 +22,22 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'VdWbvmPCqmmpsq_HyTUFNbkdrCO2Cazw',
         ],
+        'response'     => [
+            'formatters' => [
+                'yaml' => [
+                    'class' => 'app\utilities\YamlResponseFormatter'
+                ]
+            ]
+        ],
         'view'         => [
             'renderers' => [
                 'md' => [
                     'class' => 'app\utilities\MarkdownRenderer',
                 ]
+            ],
+            'theme'     => [
+                'class'    => Theme::className(),
+                'basePath' => '@app/themes/snowy'
             ]
         ],
         'cache'        => [
